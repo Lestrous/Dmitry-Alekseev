@@ -99,17 +99,6 @@ $(function() {
 		}
 	});
 
-	// события на кнопку открытия выпадающего меню
-	// $('body > header .drop-down-menu').click(function() {
-	// 	$('.popup-menu').fadeIn(400, disableScroll);
-
-	// });
-
-	// события на кнопку закрытия выпадающего меню
-	// $('.popup-menu > header .drop-down-menu').click(function() {
-	// 	$('.popup-menu').fadeOut(400, enableScroll);
-	// });
-
 	// закрытие попапа
 	$('.popup').click(function(event) {
 		if (event.target === this) {
@@ -119,22 +108,30 @@ $(function() {
 
 	// события на открытие выпадающего меню
 	$('.burger').click(function() {
-		$('.popup__menu').fadeIn(400, disableScroll);
+		$('.popup__menu').toggleClass('active');
+		disableScroll();
 	});
 
 	// события на закрытие выпадающего меню
-	$('.menu__button').click(function() {
-		$('.popup').fadeOut(400, enableScroll);
+	$('.menu__close').click(function() {
+		$('.popup__menu').toggleClass('active');
+		enableScroll();
+	});
+
+	// события на закрытие выпадающего меню
+	$('.popup__request-call .menu__button, .popup__learn-more .menu__button').click(function() {
+		$('.popup').fadeOut(700, enableScroll);
 	});
 
 	// события на закрытие выпадающего меню
 	$('.menu__link').click(function() {
-		$('.popup__menu').hide(0, enableScroll);
+		$('.popup__menu').toggleClass('active');
+		enableScroll();
 	});
 
 	// события на кнопку "заказать звонок"
 	$('.button_theme_request-call-button').click(function() {
-		$('.popup__request-call').fadeIn(400, disableScroll);
+		$('.popup__request-call').fadeIn(700, disableScroll);
 	});
 
 	// обработка кнопки формы для popup__request-call
@@ -158,7 +155,7 @@ $(function() {
 
 	// события на кнопку "заказать проект"
 	$('.button_theme_learn-more-button').click(function() {
-		$('.popup__learn-more').fadeIn(400, disableScroll);
+		$('.popup__learn-more').fadeIn(700, disableScroll);
 	});
 
 	// обработка кнопки формы для popup__learn-more

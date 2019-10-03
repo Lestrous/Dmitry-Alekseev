@@ -17,9 +17,9 @@
 	<link rel="stylesheet" href="app.css">
 </head>
 <body class="page" data-840px="" data-1024px="">
-	<div class="popup popup__menu popup_theme_dark">
+	<div class="popup popup__menu">
 		<div class="menu__container">
-			<button class="button menu__button button_theme_menu-button"></button>
+			<button class="button menu__button menu__close button_theme_popup-button"></button>
 	
 			<div class="menu__inner">
 				<nav class="nav menu__nav">
@@ -42,14 +42,14 @@
 
 	<div class="popup popup__request-call">
 		<form class="form request-call__form">
-			<button class="button menu__button button_theme_menu-button"></button>
+			<button class="button menu__button button_theme_popup-button"></button>
 			<label class="form__label">
 				<span class="form__description">Имя</span>
-				<input class="form__input" type="text" name="name" placeholder="Иван Иванов" required>
+				<input class="form__input" type="text" name="name" placeholder="Иван Иванов">
 			</label>
 			<label class="form__label">
 				<span class="form__description">Телефон</span>
-				<input class="form__input" type="tel" name="phone" placeholder="+79825497034" autocomplete="on" required>
+				<input class="form__input" type="tel" name="phone" placeholder="+79825497034" autocomplete="on">
 			</label>
 			<button class="button form__button button_theme_submit-form-button" type="submit">Отправить</button>
 		</form>
@@ -57,18 +57,18 @@
 
 	<div class="popup popup__learn-more">
 		<form class="form learn-more__form">
-			<button class="button menu__button button_theme_menu-button"></button>
+			<button class="button menu__button button_theme_popup-button"></button>
 			<label class="form__label">
 				<span class="form__description">Имя</span>
-				<input class="form__input" type="text" name="name" placeholder="Иван Иванов" required>
+				<input class="form__input" type="text" name="name" placeholder="Иван Иванов">
 			</label>
 			<label class="form__label">
 				<span class="form__description">Телефон</span>
-				<input class="form__input" type="tel" name="phone" placeholder="+79825497034" autocomplete="on" required>
+				<input class="form__input" type="tel" name="phone" placeholder="+79825497034" autocomplete="on">
 			</label>
 			<label class="form__label">
 				<span class="form__description">Почта</span>
-				<input class="form__input" type="email" name="email" placeholder="example@mail.ru" autocomplete="on" required>
+				<input class="form__input" type="email" name="email" placeholder="example@mail.ru" autocomplete="on">
 			</label>
 			<button class="button form__button button_theme_submit-form-button" type="submit">Отправить</button>
 		</form>
@@ -190,7 +190,7 @@
 	</main>
 
 	<footer class="footer page__footer">
-		<div class="footer-top">
+		<div class="footer-top page__footer-top">
 			<div class="fixed-container">
 				<nav class="nav footer-top__nav links">
 					<ul class="ul links__ul">
@@ -225,7 +225,7 @@
 			</div>
 		</div>
 
-		<div class="footer-bottom">
+		<div class="footer-bottom page__footer-bottom">
 			<div class="fixed-container">
 				<span class="footer-bottom__copyright">&copy;&nbsp;Дмитрий Алексеев, 2016&nbsp;&mdash; 2018</span>
 			</div>
