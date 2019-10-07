@@ -120,7 +120,7 @@ $(function() {
 
 	// события на закрытие выпадающего меню
 	$('.popup__request-call .menu__button, .popup__learn-more .menu__button').click(function() {
-		$('.popup').fadeOut(700, enableScroll);
+		$('.popup__request-call, .popup__learn-more').fadeOut(700, enableScroll);
 	});
 
 	// события на закрытие выпадающего меню
