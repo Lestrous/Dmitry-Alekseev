@@ -101,6 +101,8 @@ $(function() {
 
 	// закрытие попапа
 	$('.popup').click(function(event) {
+		event.preventDefault();
+
 		if (event.target === this) {
 			$(this).fadeOut(400, enableScroll);
 		}
