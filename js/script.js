@@ -99,10 +99,43 @@ $(function() {
 		}
 	});
 
+	$('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-9999" });
+
+	// обработка форм
+	$('form').each(function() {
+		$(this).validate({
+			focusInvalid: true,
+			rules: {
+				name: {
+					required: true
+				},
+				phone: {
+					required: true
+				},
+				email: {
+					required: true,
+					email: true
+				},
+			},
+			submitHandler(form) {
+				let th = $(form);
+
+				$.ajax(({
+					type: 'POST',
+					url: '../mail.php',
+					data: th.serialize()
+				})).done(() => {
+					console.log('send');
+					th.trigger('reset');
+				});
+
+				return false;
+			}
+		});
+	});
+
 	// закрытие попапа
 	$('.popup').click(function(event) {
-		event.preventDefault();
-
 		if (event.target === this) {
 			$(this).fadeOut(400, enableScroll);
 		}
@@ -135,51 +168,9 @@ $(function() {
 	$('.button_theme_request-call-button').click(function() {
 		$('.popup__request-call').fadeIn(700, disableScroll);
 	});
-
-	// обработка кнопки формы для popup__request-call
-	$('.popup__request-call .form__button').click(function() {
-		let name = $(this).parent().children('.form__label').children('input[name="name"].form__input');
-		let phone = $(this).parent().children('.form__label').children('input[name="phone"].form__input');
-		
-		if (!name.val()) {
-			name.focus();
-		} else if (!phone.val()) {
-			phone.focus();
-		} else {			
-			name.val('');
-			phone.val('');
-
-			$('.popup').click();
-		}
-
-		return false;
-	});
-
+	
 	// события на кнопку "заказать проект"
 	$('.button_theme_learn-more-button').click(function() {
 		$('.popup__learn-more').fadeIn(700, disableScroll);
-	});
-
-	// обработка кнопки формы для popup__learn-more
-	$('.popup__learn-more .form__button').click(function() {
-		let name = $(this).parent().children('.form__label').children('input[name="name"].form__input');
-		let phone = $(this).parent().children('.form__label').children('input[name="phone"].form__input');
-		let email = $(this).parent().children('.form__label').children('input[name="email"].form__input');
-		
-		if (!name.val()) {
-			name.focus();
-		} else if (!phone.val()) {
-			phone.focus();
-		} else if (!email.val()) {
-			email.focus();
-		} else {			
-			name.val('');
-			phone.val('');
-			email.val('');
-
-			$('.popup').click();
-		}
-
-		return false;
 	});
 });
