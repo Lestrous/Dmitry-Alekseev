@@ -117,6 +117,17 @@ $(function() {
 					email: true
 				},
 			},
+			messages: {
+				name: {
+					required: "Вы должны что-то ввести"
+				},
+				phone: {
+					required: "Вы должны что-то ввести"
+				},
+				email: {
+					required: "Вы должны что-то ввести"
+				},
+			},
 			submitHandler(form) {
 				let th = $(form);
 
