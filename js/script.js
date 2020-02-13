@@ -99,7 +99,7 @@ $(function() {
 		}
 	});
 
-	$('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-9999" });
+	$('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-99-99" });
 
 	// обработка форм
 	$('form').each(function() {
@@ -136,14 +136,32 @@ $(function() {
 					url: '../mail.php',
 					data: th.serialize()
 				})).done(() => {
-					console.log('send');
 					th.trigger('reset');
+					$('.popup').click(); // close popup
+
+					// notification appear
+					$('.notification')
+						.fadeIn(700)
+						.addClass('active');
+
+					// close notification after 3 sec
+					setTimeout(() => {
+						$('.notification__close').click(); // close notification
+						$('.notification').removeClass('active');
+					}, 3000);
 				});
 
 				return false;
 			}
 		});
 	});
+
+	// close notification by button
+	$('.notification__close').click(function(event) {
+		$(this).parent()
+			.removeClass('active')
+			.fadeOut(700);
+});
 
 	// закрытие попапа
 	$('.popup').click(function(event) {

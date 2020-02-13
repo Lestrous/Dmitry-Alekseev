@@ -17,9 +17,10 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body class="page" data-840px="" data-1024px="">
-	<input type="hidden" name="project_name" value="Дипломный проект">
-	<input type="hidden" name="admin_email" value="shtol.leonid@mail.ru">
-	<input type="hidden" name="form_subject" value="Тема">
+	<div class="notification page__notification">
+		<span class="notification__text text_theme_notification_text">Спасибо! Ваши данные успешно отправлены</span>
+		<button class="button notification__close button_theme_notification_close"></button>
+	</div>
 
 	<div class="popup popup__menu">
 		<div class="menu__container">
@@ -47,6 +48,10 @@
 	<div class="popup popup__request-call">
 		<button class="button menu__button button_theme_popup-button"></button>
 		<form class="form request-call__form">
+			<input type="hidden" name="project_name" value="Дипломный проект">
+			<input type="hidden" name="admin_email" value="leonid.shtol@gmail.com">
+			<input type="hidden" name="form_subject" value="Тема">
+
 			<label class="form__label">
 				<span class="form__description">Имя</span>
 				<input class="form__input" type="text" name="name" placeholder="Иван Иванов">
@@ -62,6 +67,10 @@
 	<div class="popup popup__learn-more">
 		<button class="button menu__button button_theme_popup-button"></button>
 		<form class="form learn-more__form">
+			<input type="hidden" name="project_name" value="Дипломный проект">
+			<input type="hidden" name="admin_email" value="leonid.shtol@gmail.com">
+			<input type="hidden" name="form_subject" value="Тема">
+
 			<label class="form__label">
 				<span class="form__description">Имя</span>
 				<input class="form__input" type="text" name="name" placeholder="Иван Иванов">
