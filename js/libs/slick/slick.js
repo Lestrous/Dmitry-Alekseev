@@ -9,7 +9,7 @@ $(function() {
 		variableWidth: true,
 		responsive: [
 			{
-				breakpoint: 1025,
+				breakpoint: 1251,
 				settings: {
 					slidesToShow: 2,
 					dots: true,
